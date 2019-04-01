@@ -6,7 +6,6 @@ use App\Services\GeneralService;
 
 class HomeController extends Controller
 {
-
     private $general;
 
     public function __construct(GeneralService $general)
@@ -18,6 +17,7 @@ class HomeController extends Controller
     {
         $this->general->setTitle('Anasayfa');
         $this->general->getUser();
+
         return view('home');
     }
 }
