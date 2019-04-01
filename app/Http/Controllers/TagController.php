@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
-use App\Services\GeneralService;
 use App\Services\LogService;
 use App\Services\TagService;
+use App\Services\GeneralService;
 
 class TagController extends Controller
 {
@@ -15,7 +15,7 @@ class TagController extends Controller
 
     private $logs;
 
-    public function __construct(GeneralService $general,TagService $tags,LogService $logs)
+    public function __construct(GeneralService $general, TagService $tags, LogService $logs)
     {
         $this->general = $general;
         $this->tags = $tags;
@@ -43,7 +43,7 @@ class TagController extends Controller
         $user = $this->general->getUser();
         $this->tags->validateTagData($input);
         $item = $this->tags->saveTagData($input);
-        $this->logs->addLogData(Log::TAG_ADD,$user->id,$item->id);
+        $this->logs->addLogData(Log::TAG_ADD, $user->id, $item->id);
         $this->tags->redirectToTagsList();
     }
 
@@ -60,8 +60,8 @@ class TagController extends Controller
         $input = request()->only('text');
         $user = $this->general->getUser();
         $this->tags->validateTagData($input);
-        $item = $this->tags->updateTagData($input,$id);
-        $this->logs->addLogData(Log::TAG_EDIT,$user->id,$item->id);
+        $item = $this->tags->updateTagData($input, $id);
+        $this->logs->addLogData(Log::TAG_EDIT, $user->id, $item->id);
         $this->tags->redirectToTagsList();
     }
 
@@ -69,7 +69,7 @@ class TagController extends Controller
     {
         $user = $this->general->getUser();
         $this->tags->deleteTag($id);
-        $this->logs->addLogData(Log::TAG_DELETE,$user->id);
+        $this->logs->addLogData(Log::TAG_DELETE, $user->id);
         $this->tags->redirectToTagsList();
     }
 }

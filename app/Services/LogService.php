@@ -6,7 +6,7 @@ use App\Models\Log;
 
 class LogService
 {
-    public function addLogData($type,$user,$item = 0)
+    public function addLogData($type, $user, $item = 0)
     {
         Log::create([
             'type' => $type,
