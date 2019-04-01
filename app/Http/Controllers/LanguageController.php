@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Log;
 use App\Services\LogService;
-use App\Services\LanguageService;
 use App\Services\GeneralService;
+use App\Services\LanguageService;
 
 class LanguageController extends Controller
 {
