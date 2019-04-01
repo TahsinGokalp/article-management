@@ -10,13 +10,14 @@ class TagService
     public function getAllTags()
     {
         $tags = Tag::all();
-        view()->share('tags',$tags);
+        view()->share('tags', $tags);
+
         return $tags;
     }
 
     public function validateTagData($input)
     {
-        $rules    = [
+        $rules = [
             'text' => 'required',
         ];
         $validator = Validator::make($input, $rules);
@@ -28,21 +29,24 @@ class TagService
     public function saveTagData($input)
     {
         $item = Tag::firstOrCreate(['text' => $input['text']]);
+
         return $item;
     }
 
     public function getTagDetail($id)
     {
         $tag = Tag::find($id);
-        view()->share('item',$tag);
+        view()->share('item', $tag);
+
         return $tag;
     }
 
-    public function updateTagData($input,$id)
+    public function updateTagData($input, $id)
     {
         $item = Tag::find($id);
         $item->text = $input['text'];
         $item->save();
+
         return $item;
     }
 
@@ -53,7 +57,7 @@ class TagService
 
     public function redirectToTagsList()
     {
-        redirect(route('tags'))->with(array('success' => 1))->throwResponse();
+        redirect(route('tags'))->with(['success' => 1])->throwResponse();
     }
 
     public function returnTagsView()
