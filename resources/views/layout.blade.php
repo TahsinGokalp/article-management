@@ -107,9 +107,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="sidebar-link" href="{!! route('home') !!}">
+                    <a class="sidebar-link" href="{!! route('languages') !!}">
                         <span class="icon-holder">
-                            <i class="c-blue-500 ti-home"></i>
+                            <i class="c-blue-500 ti-comments"></i>
                         </span>
                         <span class="title">Diller</span>
                     </a>

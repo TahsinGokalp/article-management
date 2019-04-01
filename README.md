@@ -5,7 +5,11 @@
 WIP
 
 ## TODO
-- [X] Register iptal edilecek.
 - [ ] Forgot password eklenecek.
 - [ ] Türkçe dil eklenecek.
 - [ ] Anasayfaya istatistik eklenecek.
+- [ ] Kullanıcılar eklenecek.
+- [ ] Makaleler eklenecek.
+- [ ] Kayıtlar eklenecek.
+- [ ] Profil eklenecek.
+- [ ] Çıkış eklenecek.

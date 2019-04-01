@@ -20,4 +20,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('authors-edit/{id}', 'AuthorController@edit')->name('authors.edit');
     Route::post('authors-edit/{id}', 'AuthorController@update')->name('authors.update');
     Route::get('authors-delete/{id}', 'AuthorController@delete')->name('authors.delete');
+    //Languages
+    Route::get('languages', 'LanguageController@index')->name('languages');
+    Route::get('languages-add', 'LanguageController@add')->name('languages.add');
+    Route::post('languages-add', 'LanguageController@save')->name('languages.save');
+    Route::get('languages-edit/{id}', 'LanguageController@edit')->name('languages.edit');
+    Route::post('languages-edit/{id}', 'LanguageController@update')->name('languages.update');
+    Route::get('languages-delete/{id}', 'LanguageController@delete')->name('languages.delete');
 });

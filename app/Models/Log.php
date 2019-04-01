@@ -18,5 +18,11 @@ class Log extends Model
 
     public const AUTHOR_DELETE = 6;
 
+    public const LANGUAGE_ADD = 4;
+
+    public const LANGUAGE_EDIT = 5;
+
+    public const LANGUAGE_DELETE = 6;
+
     protected $fillable = ['type', 'user_id', 'item_id'];
 }
