@@ -91,9 +91,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="sidebar-link" href="{!! route('home') !!}">
+                    <a class="sidebar-link" href="{!! route('tags') !!}">
                         <span class="icon-holder">
-                            <i class="c-blue-500 ti-home"></i>
+                            <i class="c-blue-500 ti-tag"></i>
                         </span>
                         <span class="title">Etiketler</span>
                     </a>
@@ -206,5 +206,6 @@
 </script>
 <script type="text/javascript" src="{!! asset('js/vendor.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('js/bundle.js') !!}"></script>
+@yield('footerAssets')
 </body>
 </html>
