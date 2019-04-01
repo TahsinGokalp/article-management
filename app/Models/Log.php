@@ -12,5 +12,11 @@ class Log extends Model
 
     public const TAG_DELETE = 3;
 
+    public const AUTHOR_ADD = 4;
+
+    public const AUTHOR_EDIT = 5;
+
+    public const AUTHOR_DELETE = 6;
+
     protected $fillable = ['type', 'user_id', 'item_id'];
 }

@@ -99,9 +99,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="sidebar-link" href="{!! route('home') !!}">
+                    <a class="sidebar-link" href="{!! route('authors') !!}">
                         <span class="icon-holder">
-                            <i class="c-blue-500 ti-home"></i>
+                            <i class="c-blue-500 ti-user"></i>
                         </span>
                         <span class="title">Yazarlar</span>
                     </a>
