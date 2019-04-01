@@ -2,6 +2,6 @@
 
 return [
 
-    'name' => env('PROJECT_NAME','Article Management'),
+    'name' => env('PROJECT_NAME', 'Article Management'),
 
 ];
