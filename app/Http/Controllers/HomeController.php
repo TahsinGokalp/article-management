@@ -17,6 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $this->general->setTitle('Anasayfa');
+        $this->general->getUser();
         return view('home');
     }
 }
