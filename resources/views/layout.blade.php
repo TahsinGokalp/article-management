@@ -185,11 +185,7 @@
             </div>
         </div>
         <main class="main-content bgc-grey-100">
-            <div id="mainContent">
-                <div class="full-container">
-                    @yield('content')
-                </div>
-            </div>
+            @yield('content')
         </main>
         <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
             <span><a href="https://tahsingokalp.com" target="_blank">tahsingokalp.com</a></span>
