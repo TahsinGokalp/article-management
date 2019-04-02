@@ -37,7 +37,7 @@ class ArticleController extends Controller
         $this->articles->getTagsAsJsArray();
         $this->articles->getAuthorsAsJsArray();
         $this->articles->getAllLanguages();
-        $this->general->returnClassConstantsToView('\App\Models\Article','types');
+        $this->general->returnClassConstantsToView('\App\Models\Article', 'types');
         $this->articles->returnArticleAddView();
     }
 
@@ -46,7 +46,7 @@ class ArticleController extends Controller
         $input = request()->all();
         $user = $this->general->getUser();
         $this->articles->validateArticleDataForAdd($input);
-        $item = $this->articles->saveArticleData($input,$user->id);
+        $item = $this->articles->saveArticleData($input, $user->id);
         $this->logs->addLogData(Log::ARTICLE_ADD, $user->id, $item->id);
         $this->articles->redirectToArticlesList();
     }
@@ -59,7 +59,7 @@ class ArticleController extends Controller
         $this->articles->getTagsAsJsArray();
         $this->articles->getAuthorsAsJsArray();
         $this->articles->getAllLanguages();
-        $this->general->returnClassConstantsToView('\App\Models\Article','types');
+        $this->general->returnClassConstantsToView('\App\Models\Article', 'types');
         $this->articles->returnArticleEditView();
     }
 
