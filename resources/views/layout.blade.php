@@ -115,9 +115,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="sidebar-link" href="{!! route('home') !!}">
+                    <a class="sidebar-link" href="{!! route('articles') !!}">
                         <span class="icon-holder">
-                            <i class="c-blue-500 ti-home"></i>
+                            <i class="c-blue-500 ti-file"></i>
                         </span>
                         <span class="title">Makaleler</span>
                     </a>

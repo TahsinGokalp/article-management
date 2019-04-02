@@ -13,3 +13,5 @@ WIP
 - [ ] Kayıtlar eklenecek.
 - [ ] Profil eklenecek.
 - [ ] Çıkış eklenecek.
+- [ ] Döküman yazılacak.
+- [ ] Ekran görüntüleri eklenecek.

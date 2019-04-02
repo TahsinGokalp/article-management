@@ -27,4 +27,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('languages-edit/{id}', 'LanguageController@edit')->name('languages.edit');
     Route::post('languages-edit/{id}', 'LanguageController@update')->name('languages.update');
     Route::get('languages-delete/{id}', 'LanguageController@delete')->name('languages.delete');
+    //Articles
+    Route::get('articles', 'ArticleController@index')->name('articles');
+    Route::get('articles-add', 'ArticleController@add')->name('articles.add');
+    Route::post('articles-add', 'ArticleController@save')->name('articles.save');
+    Route::get('articles-edit/{id}', 'ArticleController@edit')->name('articles.edit');
+    Route::post('articles-edit/{id}', 'ArticleController@update')->name('articles.update');
+    Route::get('articles-delete/{id}', 'ArticleController@delete')->name('articles.delete');
 });
