@@ -2,9 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Article;
 use App\Models\Tag;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Article;
 
 class StatsService
 {
@@ -17,8 +16,8 @@ class StatsService
     {
         $return = [];
         $articles = Article::select('publication_year')->get();
-        foreach($articles as $v){
-            if(!isset($return[$v->publication_year])){
+        foreach ($articles as $v) {
+            if (! isset($return[$v->publication_year])) {
                 $return[$v->publication_year] = 0;
             }
             $return[$v->publication_year]++;
@@ -32,8 +31,8 @@ class StatsService
     {
         $return = [];
         $articles = Article::select('type')->get();
-        foreach($articles as $v){
-            if(!isset($return[$v->type])){
+        foreach ($articles as $v) {
+            if (! isset($return[$v->type])) {
                 $return[$v->type] = 0;
             }
             $return[$v->type]++;
@@ -47,8 +46,8 @@ class StatsService
     {
         $return = [];
         $articles = Article::select('language_id')->with('language')->get();
-        foreach($articles as $v){
-            if(!isset($return[$v->language->text])){
+        foreach ($articles as $v) {
+            if (! isset($return[$v->language->text])) {
                 $return[$v->language->text] = 0;
             }
             $return[$v->language->text]++;
@@ -65,5 +64,4 @@ class StatsService
 
         return $articles;
     }
-
 }
