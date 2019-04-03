@@ -34,4 +34,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('articles-edit/{id}', 'ArticleController@edit')->name('articles.edit');
     Route::post('articles-edit/{id}', 'ArticleController@update')->name('articles.update');
     Route::get('articles-delete/{id}', 'ArticleController@delete')->name('articles.delete');
+    //Stats
+    Route::get('stats', 'StatsController@index')->name('stats');
 });

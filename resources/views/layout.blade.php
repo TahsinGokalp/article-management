@@ -123,6 +123,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="sidebar-link" href="{!! route('stats') !!}">
+                        <span class="icon-holder">
+                            <i class="c-blue-500 ti-stats-up"></i>
+                        </span>
+                        <span class="title">İstatistikler</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="sidebar-link" href="{!! route('home') !!}">
                         <span class="icon-holder">
                             <i class="c-blue-500 ti-home"></i>

@@ -21,6 +21,11 @@ class Article extends Model
         'text' => 'Makale',
     ];
 
+    public const BOOK = [
+        'id' => 4,
+        'text' => 'Kitap',
+    ];
+
     protected $fillable = ['title', 'type', 'abstract', 'file', 'language_id', 'added_by'];
 
     public function language()
