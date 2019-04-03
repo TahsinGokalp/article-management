@@ -6,13 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    public const THESIS = [
+    public const MSC = [
         'id' => 1,
-        'text' => 'Tez',
+        'text' => 'Yüksek Lisans Tezi',
+    ];
+
+    public const PHD = [
+        'id' => 2,
+        'text' => 'Doktora Tezi',
     ];
 
     public const ARTICLE = [
-        'id' => 2,
+        'id' => 3,
         'text' => 'Makale',
     ];
 
