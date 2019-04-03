@@ -140,7 +140,7 @@ class ArticleService
         $tags = $this->getNewTagsFromDB($tags);
         $tags = $this->returnIdsAsArray($tags, 'id');
         $oldTags = ArticleTag::where('article_id', $id)->get();
-        $oldTags = $this->returnIdsAsArray($oldTags, 'id');
+        $oldTags = $this->returnIdsAsArray($oldTags, 'tag_id');
         $add = array_diff($tags, $oldTags);
         $delete = array_diff($oldTags, $tags);
         foreach ($delete as $v) {
@@ -176,7 +176,7 @@ class ArticleService
         $authors = $this->getNewAuthorsFromDB($authors);
         $authors = $this->returnIdsAsArray($authors, 'id');
         $oldAuthors = ArticleAuthor::where('article_id', $id)->get();
-        $oldAuthors = $this->returnIdsAsArray($oldAuthors, 'id');
+        $oldAuthors = $this->returnIdsAsArray($oldAuthors, 'author_id');
         $add = array_diff($authors, $oldAuthors);
         $delete = array_diff($oldAuthors, $authors);
         foreach ($delete as $v) {
