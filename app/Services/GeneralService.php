@@ -17,19 +17,22 @@ class GeneralService
         return $user;
     }
 
-    public function getClassConstants($class){
+    public function getClassConstants($class)
+    {
         $reflection = new \ReflectionClass($class);
+
         return $reflection->getConstants();
     }
 
-    public function returnClassConstantsToView($class,$name){
+    public function returnClassConstantsToView($class, $name)
+    {
         $constants = $this->getClassConstants($class);
-        if(isset($constants['CREATED_AT'])){
+        if (isset($constants['CREATED_AT'])) {
             unset($constants['CREATED_AT']);
         }
-        if(isset($constants['UPDATED_AT'])){
+        if (isset($constants['UPDATED_AT'])) {
             unset($constants['UPDATED_AT']);
         }
-        view()->share($name,$constants);
+        view()->share($name, $constants);
     }
 }
