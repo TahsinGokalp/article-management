@@ -60,6 +60,7 @@ class ArticleService
     {
         $rules = [
             'title' => 'required',
+            'publication_year' => 'required',
             'type' => 'required',
             'abstract' => 'required',
             'file' => 'required|file',
@@ -75,6 +76,7 @@ class ArticleService
     {
         $rules = [
             'title' => 'required',
+            'publication_year' => 'required',
             'type' => 'required',
             'abstract' => 'required',
             'language_id' => 'required',
@@ -179,6 +181,7 @@ class ArticleService
         $file = $this->uploadArticle($input['file']);
         $item = Article::firstOrCreate([
             'title' => $input['title'],
+            'publication_year' => $input['publication_year'],
             'type' => $input['type'],
             'abstract' => $input['abstract'],
             'language_id' => $input['language_id'],
@@ -213,6 +216,7 @@ class ArticleService
             $file = $this->uploadArticle($input['file']);
         }
         $item->title = $input['title'];
+        $item->publication_year = $input['publication_year'];
         $item->type = $input['type'];
         $item->abstract = $input['abstract'];
         $item->language_id = $input['language_id'];

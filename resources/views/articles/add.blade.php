@@ -31,8 +31,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="exampleInputEmail1">Dosya</label>
-                                        <input type="file" name="file" />
+                                        <label for="exampleInputEmail1">Yayın Yılı</label>
+                                        <input type="text" class="form-control" name="publication_year" />
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -59,6 +59,12 @@
                                     <div class="form-group col-md-12">
                                         <label for="exampleInputEmail1">Etiketler</label>
                                         <input type="text" class="form-control" name="tags" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="exampleInputEmail1">Dosya</label>
+                                        <input type="file" name="file" />
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Kaydet</button>

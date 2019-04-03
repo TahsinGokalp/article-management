@@ -31,8 +31,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="exampleInputEmail1">Dosya</label>
-                                        <input type="file" name="file" />
+                                        <label for="exampleInputEmail1">Yayın Yılı</label>
+                                        <input type="text" class="form-control" name="publication_year" value="{!! $item->publication_year !!}" />
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -61,6 +61,12 @@
                                         <input type="text" class="form-control" name="tags" value="@foreach($item->tags as $v){!! $v->tag->text.',' !!}@endforeach" />
                                     </div>
                                 </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="exampleInputEmail1">Dosya <a data-fancybox="" data-type="iframe" href="{!! asset('files/articles/'.$item->file) !!}" class="cur-p btn-outline-primary">Eski Dosya</a></label>
+                                        <input type="file" name="file" />
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-primary">Kaydet</button>
                             </form>
                         </div>
@@ -73,6 +79,8 @@
 
 @section('footerAssets')
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <link href="{!! asset('plugins/tagify/tagify.css') !!}" rel="stylesheet">
     <script type="text/javascript" src="{!! asset('plugins/tagify/tagify.js') !!}"></script>
     <script>
