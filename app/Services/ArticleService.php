@@ -24,7 +24,7 @@ class ArticleService
         return $return.'}';
     }
 
-    public function getAllArticles()
+    public function getAllArticles($request)
     {
         $articles = Article::with(['tags.tag', 'authors.author', 'publicationPlace'])->get();
         view()->share('articles', $articles);

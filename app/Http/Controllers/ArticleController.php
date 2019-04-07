@@ -6,6 +6,7 @@ use App\Models\Log;
 use App\Services\LogService;
 use App\Services\ArticleService;
 use App\Services\GeneralService;
+use Illuminate\Support\Facades\Request;
 
 class ArticleController extends Controller
 {
@@ -22,11 +23,11 @@ class ArticleController extends Controller
         $this->logs = $logs;
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $this->general->setTitle('Makaleler');
         $this->general->getUser();
-        $this->articles->getAllArticles();
+        $this->articles->getAllArticles($request);
         $this->articles->returnArticlesView();
     }
 
