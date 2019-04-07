@@ -70,7 +70,7 @@ class TagController extends Controller
         $this->general->setTitle('Etiket Birleştir');
         $this->general->getUser();
         $this->tags->getAllTags();
-        view()->share('id',$id);
+        view()->share('id', $id);
         $this->tags->returnTagMergeView();
     }
 
@@ -78,7 +78,7 @@ class TagController extends Controller
     {
         $input = request()->only('tag_id');
         $user = $this->general->getUser();
-        $this->tags->validateMergeData($id,$input);
+        $this->tags->validateMergeData($id, $input);
         $this->tags->mergeTags($input, $id);
         $this->logs->addLogData(Log::TAG_MERGE, $user->id, $id);
         $this->tags->redirectToTagsList();

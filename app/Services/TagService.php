@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\ArticleTag;
 use App\Models\Tag;
+use App\Models\ArticleTag;
 use Illuminate\Support\Facades\Validator;
 
 class TagService
@@ -64,8 +64,8 @@ class TagService
 
     public function mergeTags($input, $id)
     {
-        $oldTagRelations = ArticleTag::where('tag_id',$input['tag_id'])->get();
-        foreach($oldTagRelations as $v){
+        $oldTagRelations = ArticleTag::where('tag_id', $input['tag_id'])->get();
+        foreach ($oldTagRelations as $v) {
             $v->tag_id = $id;
             $v->save();
         }
