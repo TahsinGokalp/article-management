@@ -16,3 +16,6 @@ WIP
 - [ ] Döküman yazılacak.
 - [ ] Ekran görüntüleri eklenecek.
 - [ ] DB ve dosya yedekleme eklenecek. (Onedrive?)
+- [ ] Headera hızlı erişim linkleri eklenecek.
+- [ ] Menü daha düzgün bir hale getirilecek.
+- [ ] Tez yazımı eklenecek.
