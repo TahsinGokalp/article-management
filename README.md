@@ -19,3 +19,6 @@ WIP
 - [ ] Headera hızlı erişim linkleri eklenecek.
 - [ ] Menü daha düzgün bir hale getirilecek.
 - [ ] Tez yazımı eklenecek.
+- [ ] Makalelere kısayollar eklenecek. Yıllara göre arama vs.
+- [ ] Makale arama eklenecek.
+- [ ] İstatistik sayfası jsleri düzeltilecek.
