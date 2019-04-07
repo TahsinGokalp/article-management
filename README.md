@@ -15,5 +15,4 @@ WIP
 - [ ] Çıkış eklenecek.
 - [ ] Döküman yazılacak.
 - [ ] Ekran görüntüleri eklenecek.
-- [ ] Etiket ve yazar birleştirme eklenecek.
 - [ ] DB ve dosya yedekleme eklenecek. (Onedrive?)

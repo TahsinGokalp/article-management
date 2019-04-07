@@ -36,5 +36,7 @@ class Log extends Model
 
     public const PUBLICATION_PLACE_DELETE = 9;
 
+    public const TAG_MERGE = 10;
+
     protected $fillable = ['type', 'user_id', 'item_id'];
 }

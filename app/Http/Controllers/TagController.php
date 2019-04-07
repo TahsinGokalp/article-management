@@ -65,6 +65,25 @@ class TagController extends Controller
         $this->tags->redirectToTagsList();
     }
 
+    public function merge($id)
+    {
+        $this->general->setTitle('Etiket Birleştir');
+        $this->general->getUser();
+        $this->tags->getAllTags();
+        view()->share('id',$id);
+        $this->tags->returnTagMergeView();
+    }
+
+    public function mergeSave($id)
+    {
+        $input = request()->only('tag_id');
+        $user = $this->general->getUser();
+        $this->tags->validateMergeData($id,$input);
+        $this->tags->mergeTags($input, $id);
+        $this->logs->addLogData(Log::TAG_MERGE, $user->id, $id);
+        $this->tags->redirectToTagsList();
+    }
+
     public function delete($id)
     {
         $user = $this->general->getUser();

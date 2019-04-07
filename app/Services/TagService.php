@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\ArticleTag;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,6 +23,17 @@ class TagService
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
+            redirect()->back()->withInput()->withErrors($validator->messages())->throwResponse();
+        }
+    }
+
+    public function validateMergeData($id, $input)
+    {
+        $rules = [
+            'tag_id' => 'required',
+        ];
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails() || $input['tag_id'] == $id) {
             redirect()->back()->withInput()->withErrors($validator->messages())->throwResponse();
         }
     }
@@ -50,6 +62,16 @@ class TagService
         return $item;
     }
 
+    public function mergeTags($input, $id)
+    {
+        $oldTagRelations = ArticleTag::where('tag_id',$input['tag_id'])->get();
+        foreach($oldTagRelations as $v){
+            $v->tag_id = $id;
+            $v->save();
+        }
+        Tag::destroy($input['tag_id']);
+    }
+
     public function deleteTag($id)
     {
         Tag::destroy($id);
@@ -73,5 +95,10 @@ class TagService
     public function returnTagEditView()
     {
         return response()->view('tags.edit')->throwResponse();
+    }
+
+    public function returnTagMergeView()
+    {
+        return response()->view('tags.merge')->throwResponse();
     }
 }

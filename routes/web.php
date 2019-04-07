@@ -12,6 +12,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('tags-add', 'TagController@save')->name('tags.save');
     Route::get('tags-edit/{id}', 'TagController@edit')->name('tags.edit');
     Route::post('tags-edit/{id}', 'TagController@update')->name('tags.update');
+    Route::get('tags-merge/{id}', 'TagController@merge')->name('tags.merge');
+    Route::post('tags-merge/{id}', 'TagController@mergeSave')->name('tags.mergeSave');
     Route::get('tags-delete/{id}', 'TagController@delete')->name('tags.delete');
     //Authors
     Route::get('authors', 'AuthorController@index')->name('authors');

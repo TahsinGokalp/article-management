@@ -7,7 +7,7 @@
                 <div class="col-md-12">
                     @if(Session::has('success'))
                         <div class="alert alert-success">
-                            Ekleme / düzenleme / silme işlemi tamamlanmıştır.
+                            Ekleme / düzenleme / silme / birleştirme işlemi tamamlanmıştır.
                         </div>
                     @endif
                     <div class="bgc-white bd bdrs-3 p-20 mB-20">
@@ -37,6 +37,7 @@
                                     <td>{!! $v->id !!}</td>
                                     <td>{!! $v->text !!}</td>
                                     <td>
+                                        <a href="{!! route('tags.merge',$v->id) !!}" class="btn cur-p btn-outline-primary">Birleştir</a>
                                         <a href="{!! route('tags.edit',$v->id) !!}" class="btn cur-p btn-outline-primary">Düzenle</a>
                                         <a href="{!! route('tags.delete',$v->id) !!}" class="btn cur-p btn-outline-danger">Sil</a>
                                     </td>
