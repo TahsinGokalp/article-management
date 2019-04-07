@@ -11,7 +11,6 @@ class PublicationPlaceTableSeeder extends Seeder
      */
     public function run()
     {
-
         $item = new \App\Models\PublicationPlace();
         $item->text = 'YÖK';
         $item->save();
@@ -19,6 +18,5 @@ class PublicationPlaceTableSeeder extends Seeder
         $item = new \App\Models\PublicationPlace();
         $item->text = 'DergiPark';
         $item->save();
-
     }
 }
