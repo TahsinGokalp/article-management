@@ -37,6 +37,7 @@ class ArticleController extends Controller
         $this->articles->getTagsAsJsArray();
         $this->articles->getAuthorsAsJsArray();
         $this->articles->getAllLanguages();
+        $this->articles->getAllPublicationPlaces();
         $this->general->returnClassConstantsToView('\App\Models\Article', 'types');
         $this->articles->returnArticleAddView();
     }
@@ -59,6 +60,7 @@ class ArticleController extends Controller
         $this->articles->getTagsAsJsArray();
         $this->articles->getAuthorsAsJsArray();
         $this->articles->getAllLanguages();
+        $this->articles->getAllPublicationPlaces();
         $this->general->returnClassConstantsToView('\App\Models\Article', 'types');
         $this->articles->returnArticleEditView();
     }

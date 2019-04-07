@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\PublicationPlace;
 use App\Models\Tag;
 use App\Models\Author;
 use App\Models\Article;
@@ -25,7 +26,7 @@ class ArticleService
 
     public function getAllArticles()
     {
-        $articles = Article::with(['tags.tag', 'authors.author'])->get();
+        $articles = Article::with(['tags.tag', 'authors.author','publicationPlace'])->get();
         view()->share('articles', $articles);
 
         return $articles;
@@ -37,6 +38,14 @@ class ArticleService
         view()->share('languages', $languages);
 
         return $languages;
+    }
+
+    public function getAllPublicationPlaces()
+    {
+        $places = PublicationPlace::all();
+        view()->share('places', $places);
+
+        return $places;
     }
 
     public function getTagsAsJsArray()
@@ -66,6 +75,7 @@ class ArticleService
             'abstract' => 'required',
             'file' => 'required|file',
             'language_id' => 'required',
+            'publication_place_id' => 'required',
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
@@ -81,6 +91,7 @@ class ArticleService
             'type' => 'required',
             'abstract' => 'required',
             'language_id' => 'required',
+            'publication_place_id' => 'required',
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
@@ -200,6 +211,7 @@ class ArticleService
             'type' => $input['type'],
             'abstract' => $input['abstract'],
             'language_id' => $input['language_id'],
+            'publication_place_id' => $input['publication_place_id'],
             'file' => $file,
             'added_by' => $userId,
         ]);
@@ -237,6 +249,7 @@ class ArticleService
         $item->type = $input['type'];
         $item->abstract = $input['abstract'];
         $item->language_id = $input['language_id'];
+        $item->publication_place_id = $input['publication_place_id'];
         $item->file = $file;
         $item->save();
         $tags = json_decode($input['tags'], true);

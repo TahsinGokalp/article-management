@@ -26,7 +26,7 @@ class Article extends Model
         'text' => 'Kitap',
     ];
 
-    protected $fillable = ['title', 'type', 'abstract', 'file', 'language_id', 'added_by'];
+    protected $fillable = ['title', 'type', 'abstract', 'file', 'language_id', 'added_by', 'publication_year', 'publication_place_id'];
 
     public function language()
     {
@@ -41,5 +41,10 @@ class Article extends Model
     public function authors()
     {
         return $this->hasMany('\App\Models\ArticleAuthor', 'article_id', 'id');
+    }
+
+    public function publicationPlace()
+    {
+        return $this->hasOne('\App\Models\PublicationPlace', 'id', 'publication_place_id');
     }
 }

@@ -30,5 +30,11 @@ class Log extends Model
 
     public const ARTICLE_DELETE = 9;
 
+    public const PUBLICATION_PLACE_ADD = 7;
+
+    public const PUBLICATION_PLACE_EDIT = 8;
+
+    public const PUBLICATION_PLACE_DELETE = 9;
+
     protected $fillable = ['type', 'user_id', 'item_id'];
 }

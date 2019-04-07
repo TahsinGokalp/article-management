@@ -115,6 +115,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="sidebar-link" href="{!! route('publicationPlaces') !!}">
+                        <span class="icon-holder">
+                            <i class="c-blue-500 ti-layout"></i>
+                        </span>
+                        <span class="title">Yayın Yerleri</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="sidebar-link" href="{!! route('articles') !!}">
                         <span class="icon-holder">
                             <i class="c-blue-500 ti-file"></i>

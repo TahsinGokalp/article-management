@@ -18,11 +18,11 @@
                             <form method="post" action="{!! route('articles.save') !!}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="exampleInputEmail1">Başlık</label>
                                         <input type="text" class="form-control" name="title" />
                                     </div>
-                                    <div class="form-group col-md-3">
+                                    <div class="form-group col-md-2">
                                         <label for="exampleInputEmail1">Makale Tipi</label>
                                         <select name="type" class="form-control">
                                             @foreach($types as $v)
@@ -31,6 +31,14 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
+                                        <label for="exampleInputEmail1">Yayın Yeri</label>
+                                        <select name="publication_place_id" class="form-control">
+                                            @foreach($places as $v)
+                                                <option value="{!! $v->id !!}">{!! $v->text !!}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
                                         <label for="exampleInputEmail1">Yayın Yılı</label>
                                         <input type="text" class="form-control" name="publication_year" />
                                     </div>

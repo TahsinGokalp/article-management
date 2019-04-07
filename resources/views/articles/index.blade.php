@@ -22,7 +22,7 @@
                                     <th>ID</th>
                                     <th>Tür</th>
                                     <th>Başlık</th>
-                                    <th>Dil</th>
+                                    <th>Dil / Yayın Yeri / Yayın Yılı</th>
                                     <th>Etiketler</th>
                                     <th>Yazarlar</th>
                                     <th>İşlemler</th>
@@ -33,7 +33,7 @@
                                     <th>ID</th>
                                     <th>Tür</th>
                                     <th>Başlık</th>
-                                    <th>Dil</th>
+                                    <th>Dil / Yayın Yılı / Yayın Yeri</th>
                                     <th>Etiketler</th>
                                     <th>Yazarlar</th>
                                     <th>İşlemler</th>
@@ -44,8 +44,8 @@
                                 <tr>
                                     <td>{!! $v->id !!}</td>
                                     <td>{!! getConstantsAndReturnSelected('\App\Models\Article',$v->type) !!}</td>
-                                    <td>{!! $v->title !!}</td>
-                                    <td>{!! $v->language->text !!}</td>
+                                    <td width="250">{!! $v->title !!}</td>
+                                    <td>{!! $v->language->text !!} / {!! $v->publication_year !!} / {!! $v->publicationPlace->text !!}</td>
                                     <td>
                                         @foreach($v->tags as $k)
                                             {!! $k->tag->text !!}<br />
