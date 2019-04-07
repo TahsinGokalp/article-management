@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Models\PublicationPlace;
 use App\Models\Tag;
 use App\Models\Author;
 use App\Models\Article;
@@ -10,6 +9,7 @@ use App\Models\Language;
 use App\Models\ArticleTag;
 use Illuminate\Support\Str;
 use App\Models\ArticleAuthor;
+use App\Models\PublicationPlace;
 use Illuminate\Support\Facades\Validator;
 
 class ArticleService
@@ -26,7 +26,7 @@ class ArticleService
 
     public function getAllArticles()
     {
-        $articles = Article::with(['tags.tag', 'authors.author','publicationPlace'])->get();
+        $articles = Article::with(['tags.tag', 'authors.author', 'publicationPlace'])->get();
         view()->share('articles', $articles);
 
         return $articles;
