@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Tag;
 use App\Models\ArticleTag;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Validator;
 
 class TagService

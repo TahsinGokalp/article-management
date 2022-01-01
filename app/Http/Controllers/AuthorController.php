@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
-use App\Services\LogService;
 use App\Services\AuthorService;
 use App\Services\GeneralService;
+use App\Services\LogService;
 
 class AuthorController extends Controller
 {
