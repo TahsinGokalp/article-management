@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticleNoteController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
@@ -53,6 +54,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('articles-edit/{id}', [ArticleController::class, 'edit'])->name('articles.edit');
     Route::post('articles-edit/{id}', [ArticleController::class, 'update'])->name('articles.update');
     Route::get('articles-delete/{id}', [ArticleController::class, 'delete'])->name('articles.delete');
+    //Article Notes
+    Route::get('article-notes/{article_id}', [ArticleNoteController::class, 'index'])->name('article.notes');
+    Route::get('article-notes-add/{article_id}', [ArticleNoteController::class, 'add'])->name('article.notes.add');
+    Route::post('article-notes-add/{article_id}', [ArticleNoteController::class, 'save'])->name('article.notes.save');
+    Route::get('article-notes-edit/{article_id}/{id}', [ArticleNoteController::class, 'edit'])->name('article.notes.edit');
+    Route::post('article-notes-edit/{article_id}/{id}', [ArticleNoteController::class, 'update'])->name('article.notes.update');
+    Route::get('article-notes-delete/{id}', [ArticleNoteController::class, 'delete'])->name('article.notes.delete');
     //Stats
     Route::get('stats', [StatsController::class, 'index'])->name('stats');
 });

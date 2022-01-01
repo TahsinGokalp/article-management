@@ -59,6 +59,7 @@
                                     <td>
                                         <a data-fancybox="" data-type="iframe" href="{!! asset('files/articles/'.$v->file) !!}" class="btn cur-p btn-outline-primary">PDF</a>
                                         <button type="button" class="btn cur-p btn-outline-success" data-toggle="popover" data-content="{!! $v->abstract !!}" data-original-title="Özet">Özet</button>
+                                        <a href="{!! route('article.notes',$v->id) !!}" class="btn cur-p btn-outline-primary">Notlar</a>
                                         <a href="{!! route('articles.edit',$v->id) !!}" class="btn cur-p btn-outline-primary">Düzenle</a>
                                         <a href="{!! route('articles.delete',$v->id) !!}" class="btn cur-p btn-outline-danger">Sil</a>
                                     </td>

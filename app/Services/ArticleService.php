@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Article;
 use App\Models\ArticleAuthor;
+use App\Models\ArticleNote;
 use App\Models\ArticleTag;
 use App\Models\Author;
 use App\Models\Language;
@@ -30,6 +31,11 @@ class ArticleService
         view()->share('articles', $articles);
 
         return $articles;
+    }
+
+    public function notes($articleId)
+    {
+        return ArticleNote::where('article_id', $articleId)->get();
     }
 
     public function getAllLanguages()
@@ -76,6 +82,17 @@ class ArticleService
             'file'                 => 'required|file',
             'language_id'          => 'required',
             'publication_place_id' => 'required',
+        ];
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            redirect()->back()->withInput()->withErrors($validator->messages())->throwResponse();
+        }
+    }
+
+    public function validateNoteData($input)
+    {
+        $rules = [
+            'note'                => 'required',
         ];
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
@@ -223,12 +240,27 @@ class ArticleService
         return $item;
     }
 
+    public function saveNoteData($input, $articleId)
+    {
+        $item = new ArticleNote();
+        $item->article_id = $articleId;
+        $item->note = $input['note'];
+        $item->save();
+
+        return $item;
+    }
+
     public function getArticleDetail($id)
     {
         $article = Article::where('id', $id)->with(['authors.author', 'tags.tag'])->first();
         view()->share('item', $article);
 
         return $article;
+    }
+
+    public function getNoteDetail($id)
+    {
+        return ArticleNote::where('id', $id)->firstOrFail();
     }
 
     public function deleteFile($file)
@@ -260,6 +292,15 @@ class ArticleService
         return $item;
     }
 
+    public function updateNote($input, $id)
+    {
+        $item = ArticleNote::find($id);
+        $item->note = $input['note'];
+        $item->save();
+
+        return $item;
+    }
+
     public function deleteArticle($id)
     {
         $item = Article::find($id);
@@ -267,6 +308,14 @@ class ArticleService
         ArticleAuthor::where('article_id', $item->id)->delete();
         ArticleTag::where('article_id', $item->id)->delete();
         Article::destroy($id);
+    }
+
+    public function deleteNote($id)
+    {
+        $item = ArticleNote::find($id);
+        ArticleNote::destroy($id);
+
+        return $item->article_id;
     }
 
     public function redirectToArticlesList()

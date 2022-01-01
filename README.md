@@ -5,6 +5,7 @@
 WIP
 
 ## TODO
+- [ ] Servislerin ve controllerların düzenlenmesi gerekiyor.
 - [ ] Forgot password eklenecek.
 - [ ] Türkçe dil eklenecek.
 - [ ] Anasayfaya istatistik eklenecek.
