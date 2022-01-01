@@ -23,7 +23,7 @@ class ArticleNoteController extends Controller
         $this->general->getUser();
 
         return view('articles.notes.index', [
-            'notes' =>  $this->articles->notes($articleId),
+            'notes'     => $this->articles->notes($articleId),
             'articleId' => $articleId,
         ]);
     }
@@ -54,7 +54,7 @@ class ArticleNoteController extends Controller
 
         return view('articles.notes.edit', [
             'articleId' => $articleId,
-            'item' => $this->articles->getNoteDetail($id),
+            'item'      => $this->articles->getNoteDetail($id),
         ]);
     }
 
