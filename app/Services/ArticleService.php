@@ -106,7 +106,7 @@ class ArticleService
             'title'                => 'required',
             'publication_year'     => 'required',
             'type'                 => 'required',
-            'status'             => 'required',
+            'status'               => 'required',
             'abstract'             => 'required',
             'language_id'          => 'required',
             'publication_place_id' => 'required',
