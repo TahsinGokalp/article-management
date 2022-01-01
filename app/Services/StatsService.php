@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Tag;
 use App\Models\Article;
+use App\Models\Tag;
 
 class StatsService
 {

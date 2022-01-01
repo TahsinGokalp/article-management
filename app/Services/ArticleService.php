@@ -2,15 +2,15 @@
 
 namespace App\Services;
 
-use App\Models\Tag;
-use App\Models\Author;
 use App\Models\Article;
-use App\Models\Language;
-use App\Models\ArticleTag;
-use Illuminate\Support\Str;
 use App\Models\ArticleAuthor;
+use App\Models\ArticleTag;
+use App\Models\Author;
+use App\Models\Language;
 use App\Models\PublicationPlace;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class ArticleService
 {
