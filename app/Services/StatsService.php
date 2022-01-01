@@ -17,7 +17,7 @@ class StatsService
         $return = [];
         $articles = Article::select('publication_year')->get();
         foreach ($articles as $v) {
-            if (! isset($return[$v->publication_year])) {
+            if (!isset($return[$v->publication_year])) {
                 $return[$v->publication_year] = 0;
             }
             $return[$v->publication_year]++;
@@ -32,7 +32,7 @@ class StatsService
         $return = [];
         $articles = Article::select('type')->get();
         foreach ($articles as $v) {
-            if (! isset($return[$v->type])) {
+            if (!isset($return[$v->type])) {
                 $return[$v->type] = 0;
             }
             $return[$v->type]++;
@@ -47,7 +47,7 @@ class StatsService
         $return = [];
         $articles = Article::select('language_id')->with('language')->get();
         foreach ($articles as $v) {
-            if (! isset($return[$v->language->text])) {
+            if (!isset($return[$v->language->text])) {
                 $return[$v->language->text] = 0;
             }
             $return[$v->language->text]++;

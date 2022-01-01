@@ -9,7 +9,7 @@ class LogService
     public function addLogData($type, $user, $item = 0)
     {
         Log::create([
-            'type' => $type,
+            'type'    => $type,
             'user_id' => $user,
             'item_id' => $item,
         ]);
