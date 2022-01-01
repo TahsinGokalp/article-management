@@ -21,6 +21,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Tür</th>
+                                    <th>Durum</th>
                                     <th>Başlık</th>
                                     <th>Dil / Yayın Yeri / Yayın Yılı</th>
                                     <th>Etiketler</th>
@@ -32,6 +33,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Tür</th>
+                                    <th>Durum</th>
                                     <th>Başlık</th>
                                     <th>Dil / Yayın Yılı / Yayın Yeri</th>
                                     <th>Etiketler</th>
@@ -44,6 +46,7 @@
                                 <tr>
                                     <td>{!! $v->id !!}</td>
                                     <td>{!! getConstantsAndReturnSelected('\App\Models\Article',$v->type) !!}</td>
+                                    <td>{!! getConstantsAndReturnSelected('\App\Models\ArticleEnum',$v->status) !!}</td>
                                     <td width="250">{!! $v->title !!}</td>
                                     <td>{!! $v->language->text !!} / {!! $v->publication_year !!} / {!! $v->publicationPlace->text !!}</td>
                                     <td>

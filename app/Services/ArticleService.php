@@ -106,6 +106,7 @@ class ArticleService
             'title'                => 'required',
             'publication_year'     => 'required',
             'type'                 => 'required',
+            'status'             => 'required',
             'abstract'             => 'required',
             'language_id'          => 'required',
             'publication_place_id' => 'required',
@@ -282,6 +283,7 @@ class ArticleService
         $item->abstract = $input['abstract'];
         $item->language_id = $input['language_id'];
         $item->publication_place_id = $input['publication_place_id'];
+        $item->status = $input['status'];
         $item->file = $file;
         $item->save();
         $tags = json_decode($input['tags'], true);

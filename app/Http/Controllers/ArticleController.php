@@ -63,6 +63,7 @@ class ArticleController extends Controller
         $this->articles->getAllLanguages();
         $this->articles->getAllPublicationPlaces();
         $this->general->returnClassConstantsToView('\App\Models\Article', 'types');
+        $this->general->returnClassConstantsToView('\App\Models\ArticleEnum', 'statuses');
         $this->articles->returnArticleEditView();
     }
 

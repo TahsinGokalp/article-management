@@ -44,6 +44,16 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
+                                    <div class="form-group col-md-2">
+                                        <label for="exampleInputEmail1">Durum</label>
+                                        <select name="status" class="form-control">
+                                            @foreach($statuses as $v)
+                                                <option @if($item->status == $v['id']){!! 'selected="selected"' !!}@endif value="{!! $v['id'] !!}">{!! $v['text'] !!}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="form-group col-md-8">
                                         <label for="exampleInputEmail1">Özet</label>
                                         <textarea name="abstract" class="form-control">{!! $item->abstract !!}</textarea>
