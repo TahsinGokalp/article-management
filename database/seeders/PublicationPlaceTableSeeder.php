@@ -1,5 +1,8 @@
 <?php
 
+namespace Database\Seeders;
+
+use App\Models\PublicationPlace;
 use Illuminate\Database\Seeder;
 
 class PublicationPlaceTableSeeder extends Seeder
@@ -11,11 +14,11 @@ class PublicationPlaceTableSeeder extends Seeder
      */
     public function run()
     {
-        $item = new \App\Models\PublicationPlace();
+        $item = new PublicationPlace();
         $item->text = 'YÖK';
         $item->save();
 
-        $item = new \App\Models\PublicationPlace();
+        $item = new PublicationPlace();
         $item->text = 'DergiPark';
         $item->save();
     }

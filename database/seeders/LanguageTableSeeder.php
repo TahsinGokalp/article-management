@@ -1,5 +1,8 @@
 <?php
 
+namespace Database\Seeders;
+
+use App\Models\Language;
 use Illuminate\Database\Seeder;
 
 class LanguageTableSeeder extends Seeder
@@ -11,11 +14,11 @@ class LanguageTableSeeder extends Seeder
      */
     public function run()
     {
-        $item = new \App\Models\Language();
+        $item = new Language();
         $item->text = 'Türkçe';
         $item->save();
 
-        $item = new \App\Models\Language();
+        $item = new Language();
         $item->text = 'İngilizce';
         $item->save();
     }
