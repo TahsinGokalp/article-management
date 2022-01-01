@@ -69,12 +69,12 @@ class ArticleService
     public function validateArticleDataForAdd($input)
     {
         $rules = [
-            'title' => 'required',
-            'publication_year' => 'required',
-            'type' => 'required',
-            'abstract' => 'required',
-            'file' => 'required|file',
-            'language_id' => 'required',
+            'title'                => 'required',
+            'publication_year'     => 'required',
+            'type'                 => 'required',
+            'abstract'             => 'required',
+            'file'                 => 'required|file',
+            'language_id'          => 'required',
             'publication_place_id' => 'required',
         ];
         $validator = Validator::make($input, $rules);
@@ -86,11 +86,11 @@ class ArticleService
     public function validateArticleDataForEdit($input)
     {
         $rules = [
-            'title' => 'required',
-            'publication_year' => 'required',
-            'type' => 'required',
-            'abstract' => 'required',
-            'language_id' => 'required',
+            'title'                => 'required',
+            'publication_year'     => 'required',
+            'type'                 => 'required',
+            'abstract'             => 'required',
+            'language_id'          => 'required',
             'publication_place_id' => 'required',
         ];
         $validator = Validator::make($input, $rules);
@@ -160,7 +160,7 @@ class ArticleService
         foreach ($add as $v) {
             ArticleTag::create([
                 'article_id' => $id,
-                'tag_id' => $v,
+                'tag_id'     => $v,
             ]);
         }
     }
@@ -196,7 +196,7 @@ class ArticleService
         foreach ($add as $v) {
             ArticleAuthor::create([
                 'article_id' => $id,
-                'author_id' => $v,
+                'author_id'  => $v,
             ]);
         }
     }
@@ -206,14 +206,14 @@ class ArticleService
         //File Upload
         $file = $this->uploadArticle($input['file']);
         $item = Article::firstOrCreate([
-            'title' => $input['title'],
-            'publication_year' => $input['publication_year'],
-            'type' => $input['type'],
-            'abstract' => $input['abstract'],
-            'language_id' => $input['language_id'],
+            'title'                => $input['title'],
+            'publication_year'     => $input['publication_year'],
+            'type'                 => $input['type'],
+            'abstract'             => $input['abstract'],
+            'language_id'          => $input['language_id'],
             'publication_place_id' => $input['publication_place_id'],
-            'file' => $file,
-            'added_by' => $userId,
+            'file'                 => $file,
+            'added_by'             => $userId,
         ]);
         $tags = json_decode($input['tags'], true);
         $this->checkTagsRelationsFromDB($item->id, $tags);

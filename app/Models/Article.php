@@ -7,22 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     public const MSC = [
-        'id' => 1,
+        'id'   => 1,
         'text' => 'Yüksek Lisans Tezi',
     ];
 
     public const PHD = [
-        'id' => 2,
+        'id'   => 2,
         'text' => 'Doktora Tezi',
     ];
 
     public const ARTICLE = [
-        'id' => 3,
+        'id'   => 3,
         'text' => 'Makale',
     ];
 
     public const BOOK = [
-        'id' => 4,
+        'id'   => 4,
         'text' => 'Kitap',
     ];
 
